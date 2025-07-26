@@ -19,7 +19,9 @@ export class UpdateTaskCommand extends AbstractCommand {
       .find(t => t.id === this.taskId);
     if (currentTask) {
       this.oldTask = { ...currentTask };
+      this.taskList.updateTask(this.taskId, this.updates);
     }
+    this.taskList.updateTask;
   }
 
   undo(): void {
